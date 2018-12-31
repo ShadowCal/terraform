@@ -7,7 +7,8 @@ locals {
 
 provider "aws" {
   region  = "${var.region}"
-  #profile = "duduribeiro"
+  access_key = "AKIAI4WUCK2J345OEIBQ"
+  secret_key = "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"
 }
 
 resource "aws_key_pair" "key" {
@@ -43,7 +44,7 @@ module "ecs" {
   environment         = "production"
   vpc_id              = "${module.networking.vpc_id}"
   availability_zones  = "${local.production_availability_zones}"
-  repository_name     = "openjobs/production"
+  repository_name     = "shadowcal/production"
   subnets_ids         = ["${module.networking.private_subnets_id}"]
   public_subnet_ids   = ["${module.networking.public_subnets_id}"]
   security_groups_ids = [
