@@ -7,8 +7,6 @@ locals {
 
 provider "aws" {
   region  = "${var.region}"
-  access_key = "AKIAI4WUCK2J345OEIBQ"
-  secret_key = "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"
 }
 
 resource "aws_key_pair" "key" {
